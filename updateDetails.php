@@ -23,14 +23,12 @@ include('admin_navbar.php');
 			$id = $_GET['id'];
 			$fetchDetails = mysqli_query($cofig,"SELECT * FROM individual_users WHERE id='$id'");
 			
-			while($row=mysqli_fetch_assoc($fetchDetails))
-			{ 
-				$adminName = $row['fullname'];
-				?>
+			while($row=mysqli_fetch_array($fetchDetails))
+			{ ?>
 
 			
             <tr>
-                <td><?php echo $adminName; ?></td>
+                <td><?php echo $row['fullname']; ?></td>
                 <td>System Architect</td>
                 <td>Edinburgh</td>
                 <td>61</td>
