@@ -1,5 +1,5 @@
 <?php 
 
-$base_url = "http://localhost/phpCrud/";
+$base_url = "http://localhost/phpCodeTutorials/";
 
 ?>

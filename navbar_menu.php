@@ -26,7 +26,8 @@ Admin Activity
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <li><a class="dropdown-item" href="admin_login.php">Admin Portal</a></li>
 <li><a class="dropdown-item" href="admin_registration.php">Admin Registration</a></li>
-<li><a class="dropdown-item" href="admin_registration.php">Create Beneficiary</a></li>
+<li><a class="dropdown-item" href="admin_registration.php">Beneficiary Login</a></li>
+<li><a class="dropdown-item" href="admin_registration.php">Beneficiary Registration</a></li>
 <li><hr class="dropdown-divider"></li>
 <li><a class="dropdown-item" href="#">Something else here</a></li>
 </ul>

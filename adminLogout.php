@@ -2,10 +2,10 @@
 
 	
 		session_start();
-		unset($_SESSION['loggedinUser']);
+		unset($_SESSION['loggedinAdmin']);
 		session_destroy();
 		echo "<script>alert('logged Out successfully');
-		window.location.href = 'login.php';
+		window.location.href = 'admin_login.php';
 
 		</script>";
 		;
