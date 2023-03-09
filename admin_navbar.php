@@ -45,13 +45,8 @@ Admin Activity
 Admin Profile
 </a>
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<li><a class="dropdown-item" href="#">Admin Portal</a></li>
-<li><a class="dropdown-item" href="#">Admin Registration</a></li>
-<li><a class="dropdown-item" href="#">Beneficiary Login</a></li>
-<li><a class="dropdown-item" href="#">Beneficiary Registration</a></li>
-<li><a class="dropdown-item" href="updateDetails.php">Update Details</a></li>
-<li><hr class="dropdown-divider"></li>
-<li><a class="dropdown-item" href="#">Something else here</a></li>
+<li><a class="dropdown-item" href="admin_dashboard.php">My Profile</a></li>
+<li><a class="dropdown-item" href="updateDetails.php">View Beneficiary</a></li>
 </ul>
 </li>
 

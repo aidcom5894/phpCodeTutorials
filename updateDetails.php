@@ -1,59 +1,78 @@
 <?php 
+
+session_start();
+if(!isset($_SESSION['loggedinAdmin']))
+{
+    echo "<script>alert('No Logged In Admin Found');window.location.href='admin_login.php';</script>";
+}
+
+include('configuration/base_url.php');
 include('configuration/db_config.php');
 include('admin_navbar.php');
+
 ?>
 
 <div class="container-fluid" style="margin-top:36px;">
-	<form method="POST" action="saveEdit.php?id=<?php echo $id; ?>">
-		<table id="example" class="display" style="width:100%">
-
+<table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Password</th>
+                <th>Bio</th>
+                <th>Referal Code</th>
+                <th>User Avatar</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-        	<?php 
+            <?php 
 
-			$id = $_GET['id'];
-			$fetchDetails = mysqli_query($cofig,"SELECT * FROM individual_users WHERE id='$id'");
-			
-			while($row=mysqli_fetch_array($fetchDetails))
-			{ ?>
+                $fetchIndDetails = mysqli_query($config,"SELECT * FROM individual_users");
 
-			
+                while($row = mysqli_fetch_assoc($fetchIndDetails)) { ?>
+                    
+               
             <tr>
+                <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['fullname']; ?></td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['contact']; ?></td>
+                <td><?php echo $row['password']; ?></td>
+                <td><?php echo $row['user_bio']; ?></td>
+                <td><?php echo $row['referal_code']; ?></td>
+                <td><img src="<?php echo $row['user_avatar']; ?>" class="img-thumbnail" alt="..." style="width: 90px; height: 90px;"></td>
+                <td><a href="edit_users.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Update</a></td>
+                <td><a href="#" class="btn btn-danger">Delete</a></td>
+                
             </tr>
-            <?php } ?>
+        <?php } ?>
         </tbody>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Password</th>
+                <th>Bio</th>
+                <th>Referal Code</th>
+                <th>User Avatar</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </tfoot>
     </table>
-	</form>
 </div>
 
 
+
+
 <script type="text/javascript">
-	$(document).ready(function () {
+    $(document).ready(function () {
     $('#example').DataTable();
 });
 </script>
