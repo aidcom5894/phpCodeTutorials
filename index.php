@@ -25,7 +25,7 @@ include('navbar_menu.php') ;
 
 <div class="small-box bg-info">
 <div class="inner">
-<h3><?php echo count($countAdmin); ?></h3>
+<h3><?php echo count(mysqli_num_rows($countAdmin)); ?></h3>
 <p>Admin Registered</p>
 </div>
 <div class="icon">
@@ -39,7 +39,7 @@ include('navbar_menu.php') ;
 
 <div class="small-box bg-success">
 <div class="inner">
-<h3><?php echo count($countIndividual); ?></h3>
+<h3><?php echo count(mysqli_num_rows($countIndividual)); ?></h3>
 <p>Individual Users</p>
 </div>
 <div class="icon">
