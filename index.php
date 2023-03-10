@@ -19,13 +19,13 @@ include('navbar_menu.php') ;
 
 		$countAdmin = mysqli_query($config,"SELECT * FROM admin_registration");
 		$countIndividual = mysqli_query($config,"SELECT * FROM individual_users");
-		$countReferalCodes = mysqli_query($config,"SELECT referal_id FROM admin_registration");
+		$countReferalCodes = mysqli_query($config,"SELECT referal_code FROM individual_users WHERE referal_code<>''");
 
 	?>
 
 <div class="small-box bg-info">
 <div class="inner">
-<h3><?php echo count(mysqli_num_rows($countAdmin)); ?></h3>
+<h3><?php echo mysqli_num_rows($countAdmin); ?></h3>
 <p>Admin Registered</p>
 </div>
 <div class="icon">
@@ -39,7 +39,7 @@ include('navbar_menu.php') ;
 
 <div class="small-box bg-success">
 <div class="inner">
-<h3><?php echo count(mysqli_num_rows($countIndividual)); ?></h3>
+<h3><?php echo mysqli_num_rows($countIndividual); ?></h3>
 <p>Individual Users</p>
 </div>
 <div class="icon">
@@ -67,7 +67,7 @@ include('navbar_menu.php') ;
 
 <div class="small-box bg-danger">
 <div class="inner">
-<h3><?php echo count($countReferalCodes); ?></h3>
+<h3><?php echo mysqli_num_rows($countReferalCodes); ?></h3>
 <p>Referal Codes Issues</p>
 </div>
 <div class="icon">

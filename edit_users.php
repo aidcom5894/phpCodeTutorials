@@ -66,13 +66,14 @@ while ($row = mysqli_fetch_assoc($getDetails))
 
 if(isset($_POST['updateUser']))
 {
+	$id = $_GET['id'];
 	$updatedName = $_POST['userName'];
 	$updatedEmail = $_POST['userEmail'];
 	$updatedContact = $_POST['userContact'];
 	$updatedPassword = $_POST['userPassword'];
 	$updatedBIO = $_POST['userBio'];
 
-	$updateQuery = mysqli_query($config,"UPDATE individual_users SET fullname='$updatedName',email='$updatedEmail',contact='$updatedContact',password='$updatedPassword',user_bio='$updatedBIO'");
+	$updateQuery = mysqli_query($config,"UPDATE individual_users SET fullname='$updatedName',email='$updatedEmail',contact='$updatedContact',password='$updatedPassword',user_bio='$updatedBIO' WHERE id='$id'");
 
 	if($updateQuery)
 	{
